@@ -1,0 +1,44 @@
+<template>
+        <div class="box">
+            <div class="slds-grid slds-grid_vertical">
+                <div class="slds-col">
+                    <p class="fontSizeCustom">Sign In</p>
+                </div>
+                <div class="slds-col">
+                    <lightning-input type="text" variant="standard" name="name" label="UserName" placeholder="Enter Username" 
+                                     onchange={handleusername} value={username}></lightning-input>
+                </div>
+                <div class="slds-col">
+                    <lightning-input type="password" variant="standard" name="name" label="Password" placeholder="Enter Password" 
+                                     onchange={handleupassword} value={password}></lightning-input>
+                </div>
+                <div class="slds-coSl">
+                    <div class="button" onclick={handleLogin}>
+                        Log In
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Error mesaage -->
+         <template if:true={iserror}>
+            <div class="slds-notify slds-notify_alert slds-alert_error" role="alert">
+                <span class="slds-assistive-text">error</span>
+                <span class="slds-icon_container slds-icon-utility-error slds-m-right_x-small" title="Description of icon when needed">
+                  <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#error"></use>
+                  </svg>
+                </span>
+                <h2>
+                  {errormessage}<a href="#">More Information</a>
+                </h2>
+                <div class="slds-notify__close">
+                  <button class="slds-button slds-button_icon slds-button_icon-small slds-button_icon-inverse" title="Close">
+                    <svg class="slds-button__icon" aria-hidden="true">
+                      <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+                    </svg>
+                    <span class="slds-assistive-text">Close</span>
+                  </button>
+                </div>
+              </div>
+         </template>
+</template>
