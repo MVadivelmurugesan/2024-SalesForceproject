@@ -48,5 +48,5 @@ Global class INCURCON2 implements Database.Batchable<SObject> {
     global void finish(DataBase.BatchableContext bc){
       System.debug('Finish Method: Batch job completed successfully.');
 
-    }
+  }
 }
